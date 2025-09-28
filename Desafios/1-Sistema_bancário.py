@@ -58,7 +58,7 @@ while True:
         elif saque > 0:
 
             print(f"Valor R${saque} retirado com sucesso!")
-            
+
             saldo -= saque
             extrato += f"Valor sacado: R${saque}\n"
             numero_saques += 1
@@ -71,8 +71,8 @@ while True:
     elif opcao == 3:
         
         print("Exibindo o extrato bancário...")
-        print("Não foram realizadas movimentações na conta." if not extrato else extrato)
         print("\n======== EXTRATO ========\n")
+        print("Não foram realizadas movimentações na conta." if not extrato else extrato)
         print(extrato)
         print(f"Saldo: R${saldo:.2f}\n")
         print("=========================")
