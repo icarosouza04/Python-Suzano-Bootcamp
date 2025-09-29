@@ -1,6 +1,6 @@
 # Lidando com data, hora e fuso horário no Python
 
-from datetime import date, datetime, time, timedelta
+from datetime import date, datetime, time, timedelta, timezone
 
 data = date(2025, 9, 28)
 
@@ -50,3 +50,34 @@ print(resultado.time())
 
 print(datetime.now().date())
 
+# Formatando e convertendo datas com strftime e srtptime
+
+data_hora_atual = datetime.now()
+data_hora_str = "2025-09-28 23:25"
+mascara_ptbr = "%d/%m/%Y"
+mascara_en = "%Y-%m-%d %H:%M"
+
+print(data_hora_atual.strftime(mascara_ptbr))
+
+data_convertida = (datetime.strptime(data_hora_str, mascara_en))
+
+print(data_convertida)
+print(type(data_convertida))
+
+# pytz e timezone
+
+import pytz
+
+data = datetime.now(pytz.timezone("Europe/Oslo"))
+data2 = datetime.now(pytz.timezone("America/Sao_Paulo"))
+
+print(data)
+print(data2)
+
+# Solução sem pytz
+
+data_oslo = datetime.now(timezone(timedelta(hours = 2)))
+data_sao_paulo = datetime.now(timezone(timedelta(hours = -3)))
+
+print(data_oslo)
+print(data_sao_paulo)
