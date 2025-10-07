@@ -1,10 +1,22 @@
 # Exercitando a modularização de pacotes
 
+from time import sleep
+
 def Calculo_IMC(peso, altura):
     
     IMC = peso / (altura * altura)
 
-    print(f"Você pesa {peso}Kg e mede {altura}m de altura.\nSeu IMC é igual a {IMC}.")
+    sleep(1)
+    print(f"=" * 40)
+    print(f"Você pesa {peso}Kg e mede {altura}m de altura.")
+    print(f"=" * 40)
+    sleep(1)
+    print(f"Seu IMC é igual a {IMC:.2f}.")
+    print(f"=" * 40)
+    sleep(1)
+    print("Calculando seu IMC...")
+    print(f"=" * 40)
+    sleep(1.5)
 
     if IMC < 18.5:
         print("Você está na faixa: Abaixo do Peso.")
@@ -18,3 +30,6 @@ def Calculo_IMC(peso, altura):
         print("Você está na faixa: Obesidade Grau II.")
     else:
         print("Você está na faixa: Obesidade Grau III.")
+    
+    print(f"=" * 40)
+
